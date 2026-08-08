@@ -1,0 +1,44 @@
+name: Importar arquivos raw do desafio
+
+on:
+  push:
+    paths:
+      - '.github/workflows/import-raw.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-raw:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Baixar arquivos originais
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p raw
+          base='https://raw.githubusercontent.com/digitalinnovationone/laboratorio-wiki-aws/main/raw'
+          curl --fail --location --retry 3 "$base/ata_reuniao_vendas_sa.pdf" -o raw/ata_reuniao_vendas_sa.pdf
+          curl --fail --location --retry 3 "$base/ata_resultados_vendas_novos_dados.png" -o raw/ata_resultados_vendas_novos_dados.png
+          curl --fail --location --retry 3 "$base/vendas_sa_dados_ficticios_laboratorio.csv" -o raw/vendas_sa_dados_ficticios_laboratorio.csv
+          test -s raw/ata_reuniao_vendas_sa.pdf
+          test -s raw/ata_resultados_vendas_novos_dados.png
+          test -s raw/vendas_sa_dados_ficticios_laboratorio.csv
+
+      - name: Commit dos arquivos raw
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add raw/
+          if git diff --cached --quiet; then
+            echo 'Arquivos raw já estão presentes.'
+            exit 0
+          fi
+          git commit -m 'data: adicionar arquivos raw originais do desafio'
+          git push
