@@ -4,6 +4,15 @@ Solução proposta para o desafio **A Wiki Perdida dos Arquivos Corporativos**, 
 
 > A proposta usa somente serviços AWS para armazenamento, OCR, orquestração, enriquecimento com IA, busca vetorial, autenticação, auditoria e monitoramento.
 
+## 📚 Projetos neste repositório
+
+Este repositório reúne duas entregas práticas de IA e AWS:
+
+1. **Wiki Corporativa Inteligente na AWS** — arquitetura RAG para documentos heterogêneos, detalhada neste README e em [`resposta.md`](./resposta.md).
+2. **[Análise Avançada de Imagens e Texto com IA na AWS](./analise-avancada-imagens-texto-aws/)** — pipeline serverless utilizando Amazon S3, Textract, Rekognition, Bedrock, Lambda e Step Functions para analisar imagens e documentos.
+
+---
+
 ## 🎯 Problema
 
 A empresa mantém registros comerciais misturados em uma única pasta `raw/`:
@@ -114,10 +123,14 @@ A arquitetura evita OCR no PDF que já possui camada textual e usa processamento
 .
 ├── README.md
 ├── resposta.md
-└── raw/
-    ├── ata_reuniao_vendas_sa.pdf
-    ├── ata_resultados_vendas_novos_dados.png
-    └── vendas_sa_dados_ficticios_laboratorio.csv
+├── raw/
+│   ├── ata_reuniao_vendas_sa.pdf
+│   ├── ata_resultados_vendas_novos_dados.png
+│   └── vendas_sa_dados_ficticios_laboratorio.csv
+└── analise-avancada-imagens-texto-aws/
+    ├── README.md
+    ├── arquitetura.svg
+    └── exemplo-saida.json
 ```
 
 ## 🧠 Principais aprendizados
@@ -126,6 +139,10 @@ O principal aprendizado é que **ingestão documental não é um problema de for
 
 A resposta detalhada das quatro Quests está em [`resposta.md`](./resposta.md).
 
+## 🖼️ Segundo desafio: Imagens e Texto com IA
+
+O projeto [`analise-avancada-imagens-texto-aws`](./analise-avancada-imagens-texto-aws/) expande o portfólio para um pipeline multimodal. Nele, documentos com texto seguem para Amazon Textract, fotografias e cenas podem ser analisadas pelo Amazon Rekognition, e os resultados estruturados são interpretados pelo Amazon Bedrock. A solução também aborda segurança, tratamento de falhas, confiança, custos e rastreabilidade.
+
 ---
 
-Projeto desenvolvido por **Luis Felipe Ramalho Carvalho** como entrega prática do desafio de arquitetura AWS da DIO.
+Projeto desenvolvido por **Luis Felipe Ramalho Carvalho** como entrega prática de desafios de IA e arquitetura AWS da DIO.
