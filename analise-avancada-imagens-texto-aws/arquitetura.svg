@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <rect width="1400" height="760" fill="#ffffff"/>
+  <style>
+    .title { font: 700 34px Arial, sans-serif; fill: #111827; }
+    .subtitle { font: 400 18px Arial, sans-serif; fill: #4b5563; }
+    .box { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 18; ry: 18; }
+    .aws { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; rx: 18; ry: 18; }
+    .ai { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; rx: 18; ry: 18; }
+    .store { fill: #ecfdf5; stroke: #059669; stroke-width: 2; rx: 18; ry: 18; }
+    .txt { font: 700 18px Arial, sans-serif; fill: #111827; text-anchor: middle; }
+    .small { font: 400 14px Arial, sans-serif; fill: #4b5563; text-anchor: middle; }
+    .arrow { stroke: #64748b; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="700" y="55" class="title" text-anchor="middle">Análise Avançada de Imagens e Texto com IA na AWS</text>
+  <text x="700" y="88" class="subtitle" text-anchor="middle">Pipeline serverless para OCR, visão computacional e interpretação com IA generativa</text>
+
+  <rect x="60" y="300" width="180" height="100" class="box"/>
+  <text x="150" y="338" class="txt">Usuário</text>
+  <text x="150" y="365" class="small">Imagem ou documento</text>
+
+  <rect x="300" y="300" width="180" height="100" class="store"/>
+  <text x="390" y="338" class="txt">Amazon S3</text>
+  <text x="390" y="365" class="small">Upload + original</text>
+
+  <rect x="540" y="300" width="180" height="100" class="aws"/>
+  <text x="630" y="338" class="txt">AWS Lambda</text>
+  <text x="630" y="365" class="small">Classificação</text>
+
+  <rect x="780" y="300" width="190" height="100" class="aws"/>
+  <text x="875" y="338" class="txt">Step Functions</text>
+  <text x="875" y="365" class="small">Orquestração</text>
+
+  <rect x="1030" y="175" width="210" height="100" class="ai"/>
+  <text x="1135" y="213" class="txt">Amazon Textract</text>
+  <text x="1135" y="240" class="small">OCR + documentos</text>
+
+  <rect x="1030" y="425" width="210" height="100" class="ai"/>
+  <text x="1135" y="463" class="txt">Amazon Rekognition</text>
+  <text x="1135" y="490" class="small">Objetos + cenas</text>
+
+  <rect x="780" y="600" width="190" height="100" class="aws"/>
+  <text x="875" y="638" class="txt">AWS Lambda</text>
+  <text x="875" y="665" class="small">Normalização</text>
+
+  <rect x="540" y="600" width="180" height="100" class="ai"/>
+  <text x="630" y="638" class="txt">Amazon Bedrock</text>
+  <text x="630" y="665" class="small">Interpretação</text>
+
+  <rect x="300" y="600" width="180" height="100" class="store"/>
+  <text x="390" y="638" class="txt">S3 + DynamoDB</text>
+  <text x="390" y="665" class="small">Resultados + metadados</text>
+
+  <path d="M240 350 L300 350" class="arrow"/>
+  <path d="M480 350 L540 350" class="arrow"/>
+  <path d="M720 350 L780 350" class="arrow"/>
+  <path d="M970 330 C1000 300 1000 245 1030 225" class="arrow"/>
+  <path d="M970 370 C1000 400 1000 455 1030 475" class="arrow"/>
+  <path d="M1135 275 C1135 550 960 570 900 600" class="arrow"/>
+  <path d="M1135 525 C1135 570 980 590 970 620" class="arrow"/>
+  <path d="M780 650 L720 650" class="arrow"/>
+  <path d="M540 650 L480 650" class="arrow"/>
+
+  <text x="700" y="735" class="subtitle" text-anchor="middle">Segurança: IAM + KMS | Observabilidade: CloudWatch + CloudTrail</text>
+</svg>
