@@ -1,0 +1,46 @@
+{
+  "document_id": "img-001",
+  "source": "s3://exemplo-bucket/uploads/exemplo.png",
+  "content_type": "mixed",
+  "services_used": [
+    "Amazon Textract",
+    "Amazon Rekognition",
+    "Amazon Bedrock"
+  ],
+  "ocr": {
+    "text": "Relatório de resultados comerciais",
+    "average_confidence": 96.2,
+    "handwriting_detected": false
+  },
+  "vision": {
+    "labels": [
+      {
+        "name": "Person",
+        "confidence": 94.7
+      },
+      {
+        "name": "Laptop",
+        "confidence": 98.4
+      },
+      {
+        "name": "Office",
+        "confidence": 96.1
+      }
+    ]
+  },
+  "generative_analysis": {
+    "summary": "A imagem apresenta um ambiente de escritório com uma pessoa utilizando um notebook. Também foi detectado texto associado a um relatório de resultados comerciais.",
+    "key_elements": [
+      "Pessoa",
+      "Notebook",
+      "Ambiente de escritório",
+      "Relatório comercial"
+    ],
+    "warnings": [],
+    "evidence_based": true
+  },
+  "processing": {
+    "status": "COMPLETED",
+    "review_required": false
+  }
+}
